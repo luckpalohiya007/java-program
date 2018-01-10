@@ -1,29 +1,29 @@
-import java.sql.*;
-class M1 
+class A implements Runnable//runable is interface available in java.lang package
 {
-	public static void main(String[] args) 
-		throws Exception
+	public void run()
 	{
-		//1.registering a driver
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-
-		//2.establishing a db connection
-		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "1234");
-		
-		//3.creating Statement to send the sql command
-		Statement stmt = con.createStatement();
-
-		//4.composing sql command
-		String sql = "CREATE TABLE TAB208(ID NUMBER, FIRST_NAME VARCHAR2(9))";
-
-		//5.send sql command to the db
-		stmt.execute(sql);
-
-		//6.closing all db resources
-		stmt.close();
-		con.close();
-
-		System.out.println("done");
-
+		for(int i = 0; i < 1000; i++)
+		{
+			System.out.println(i);
+		}
 	}
 }
+class M1  
+{
+	public static void main(String[] args) 
+	{
+		A a1 = new A();
+		Thread t1 = new Thread(a1);
+		t1.start();
+		for(int i = 1000; i < 2000; i++)
+		{
+			System.out.println(i);
+		}
+	}
+}
+/*
+-in the runnable interface only one method that is run method.
+-single method interface are also called as functional interfaces .
+-while creatin a object to A is creating 
+-create an object of thread a1 con under 
+*/
