@@ -4,10 +4,7 @@
  */
 package com.lara;
 import java.util.ArrayList;
-/**
- *
- * @author PRATEEK GUPTA
- */
+
 public class M3
 {
      public static void main(String arg[])
