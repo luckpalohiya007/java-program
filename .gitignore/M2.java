@@ -1,14 +1,20 @@
-import java.sql.*;
-class M2 
+
+import java.util.ArrayList;
+
+public class M2 
 {
-	public static void main(String[] args) 
-		throws Exception
-	{
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","1234");
-		Statement stmt = con.createStatement();
-		String s1 ="INSERT INTO TAB208 VALUES(1, 'RAMU')";
-		stmt.execute(s1);
-		System.out.println("done");
-	}
+     public static void main(String arg[])
+        {
+         ArrayList list=new ArrayList();
+         list.add(1000);
+         list.add(1000.00);
+         list.add("abc");
+         list.add('A');
+         list.add(true);
+         list.add(2,"xyz");//we are adding element in the middle
+         System.out.println(list);  //
+            
+          
+      }
+    
 }
